@@ -27,10 +27,10 @@ SET time_zone = "+00:00";
 -- Estructura de tabla para la tabla `Paciente`
 --
 
-CREATE TABLE `Paciente` (
+CREATE TABLE `paciente` (
+  `dni` varchar(13) NOT NULL PRIMARY KEY,
   `nombrePaciente` varchar(50) NOT NULL,
   `apellidos` varchar(50) NOT NULL,
-  `dni` varchar(13) NOT NULL PRIMARY KEY,
   `fnac` date NOT NULL,
   `telefono` varchar(20) NOT NULL,
   `email` varchar(100) NOT NULL
@@ -42,7 +42,7 @@ CREATE TABLE `Paciente` (
 -- Estructura de tabla para la tabla `Tratamiento`
 --
 
-CREATE TABLE `Tratamiento` (
+CREATE TABLE `tratamiento` (
   `codigo` varchar(50) NOT NULL,
   `descripcion` varchar(50) NOT NULL,
   `fecha` date NOT NULL,
