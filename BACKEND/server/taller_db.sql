@@ -28,9 +28,9 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `Paciente` (
-  `nombrePaciente` varchar(50) NOT NULL,
-  `apellidos` varchar(50) NOT NULL,
   `dni` varchar(13) NOT NULL PRIMARY KEY,
+  `nombrePaciente` varchar(50) NOT NULL,
+  `apellidos` varchar(50) NOT NULL,  
   `fnac` date NOT NULL,
   `telefono` varchar(20) NOT NULL,
   `email` varchar(100) NOT NULL

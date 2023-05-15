@@ -40,9 +40,9 @@ public class Proveedores extends HttpServlet {
         BDAdaptador bd = new BDAdaptador();
         
         switch (peticionSolicitada) {
-            case "todos": resultado = bd.getProveedores();
+            case "todos": resultado = bd.getPacientes();
                  break;
-            case "insertar": resultado = bd.insertProveedor(datos);
+            case "insertar": resultado = bd.insertPaciente(datos);
                  break;
             default: resultado = "<p>Parámetro desconocido</p>";
         }
