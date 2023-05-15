@@ -58,7 +58,7 @@ public class BDAdaptador {
             connection = this.initDatabase();
 
             //st = con.createStatement();
-            ps = connection.prepareStatement("select * from paciente where apellido=?");
+            ps = connection.prepareStatement("select * from paciente where apellidos=?");
             ps.setString(1, apellidosPaciente);
 
             //ResultSet rs = st.executeQuery("select * from proveedores");
