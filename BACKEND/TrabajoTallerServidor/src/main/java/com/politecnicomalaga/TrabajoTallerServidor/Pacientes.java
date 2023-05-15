@@ -15,7 +15,7 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author andres
  */
-public class Proveedores extends HttpServlet {
+public class Pacientes extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -28,39 +28,45 @@ public class Proveedores extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        
+
         String peticionSolicitada = request.getParameter("peticion");
-        String datos = request.getParameter("datos");  //Datos enviados en CSV
-        
-        
-        
+        String datos = request.getParameter("datos");  //Datos enviados en JSON
+
+
+
         response.setContentType("text/html;charset=UTF-8");
-        
+
         String resultado = "";
         BDAdaptador bd = new BDAdaptador();
-        
+
         switch (peticionSolicitada) {
-            case "todos": resultado = bd.getProveedores();
-                 break;
-            case "insertar": resultado = bd.insertProveedor(datos);
-                 break;
+            case "listaPacientes": resultado = bd.getPacientes(datos); //apellidos
+                break;
+            case "listaTratamientos": resultado = bd.getTratamientos(datos); //dniPaciente
+                break;
+            case "insertPaciente": resultado = bd.insertPaciente(datos); //JSON Paciente
+                break;
+            case "insertTratamiento": resultado = bd.insertTratamiento(datos); // JSON Tratamiento
+                break;
+            case "cobraTratamiento": resultado = bd.cobraTratamiento(datos); //codTratamiento,codPaciente
+
             default: resultado = "<p>Parámetro desconocido</p>";
         }
-        
+
         try ( PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
             //out.print(resultado);
             out.println("<!DOCTYPE html>\n" +
-                        "<html>\n" +
-                        "<head>\n" +
-                            "<title>Get Proveedores Result</title>\n" +
-                            "<meta charset=\"UTF-8\">\n" +
-                            "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n" +
-                        "</head>\n" +
-                        "<body style=\"background-color:red;\"><p>Resultado:</p>\n" +
-                            resultado +
-                        "</body>\n" +
-                        "</html>");
+                    "<html>\n" +
+                    "<head>\n" +
+                    "<title>Proyecto Clinica</title>\n" +
+                    "<meta charset=\"UTF-8\">\n" +
+                    "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n" +
+                    "</head>\n" +
+                    "<body><p>Resultado:</p>\n" +
+                    resultado +
+                    "</body>\n" +
+                    "</html>");
         }
     }
 
@@ -100,7 +106,7 @@ public class Proveedores extends HttpServlet {
      */
     @Override
     public String getServletInfo() {
-        return "BackEnd TrabajoTaller Servlet";
+        return "BackEnd Clinica Servlet";
     }// </editor-fold>
 
 }
