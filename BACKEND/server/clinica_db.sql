@@ -60,7 +60,7 @@ CREATE TABLE `tratamiento` (
 --
 
 -- INSERT INTO Paciente
-INSERT INTO paciente (nombrePaciente, apellidos, dni, fnac, telefono, email)
+INSERT INTO paciente (dni, nombrePaciente, apellidos, fnac, telefono, email)
 VALUES ('SOS', 'Proyecto', '12345678A', '2023-05-14', '123456789', 'sos@proyecto.com');
 
 -- INSERT INTO Tratamiento
