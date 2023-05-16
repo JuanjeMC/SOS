@@ -61,7 +61,7 @@ CREATE TABLE `tratamiento` (
 
 -- INSERT INTO Paciente
 INSERT INTO paciente (dni, nombrePaciente, apellidos, fnac, telefono, email)
-VALUES ('SOS', 'Proyecto', '12345678A', '2023-05-14', '123456789', 'sos@proyecto.com');
+VALUES ('12345678A', 'Proyecto', 'SOS', '2023-05-14', '123456789', 'sos@proyecto.com');
 
 -- INSERT INTO Tratamiento
 INSERT INTO tratamiento (codigo, descripcion, fecha, precio, cobrado, dniPaciente)
