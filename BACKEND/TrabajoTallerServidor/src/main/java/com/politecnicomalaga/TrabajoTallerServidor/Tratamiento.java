@@ -34,8 +34,8 @@ this.sDniPaciente = sDniPaciente;
     "DniPaciente": "25778858W"
 }
 */
-public Tratamiento(String sJSON) {
-    JSONObject json = new JSONObject(sJSON);
+/*public Tratamiento(String sJSON) {
+    /*JSONObject json = new JSONObject(sJSON);
     
     this.sCodigo  = json.getString("Codigo");
     this.sDescripcion = json.getString("Descripcion");
@@ -44,9 +44,9 @@ public Tratamiento(String sJSON) {
     this.bCobrado = json.getBoolean("Cobrado");
     this.sDniPaciente = json.getString("DniPaciente");
 
-}   
+}  */
 
-/*
+
 public Tratamiento(String sCSV) {
     String[] columnas = sCSV.split(";");
 
@@ -65,7 +65,7 @@ public Tratamiento(String sCSV) {
     bCobrado = true;
     }
 }
-*/
+
        
 //Getters y Setters
 public String getsCodigo() {
@@ -148,12 +148,13 @@ public String toString() {
 return String.format("%6s#%30s#%10s#%4.2f# Cobrado: %b# DniPaciente: %9s", sCodigo, sDescripcion, sFecha, fPrecio,
                      bCobrado, sDniPaciente);
 }
+}
 /* 
 public String toCSV() {
 return String.format("Tratamiento;%s;%s;%s;%s;%b\n", sCodigo, sDescripcion, sFecha, fPrecio, bCobrado);
 }
 */
-public JSONObject toJSON(){
+/*public JSONObject toJSON(){
 
     JSONObject jo = new JSONObject();
     jo.put("Codigo", sCodigo);
@@ -163,4 +164,4 @@ public JSONObject toJSON(){
     jo.put("Cobrado", bCobrado);
     jo.put("DniPaciente", sDniPaciente);
     }
-}
+}*/
