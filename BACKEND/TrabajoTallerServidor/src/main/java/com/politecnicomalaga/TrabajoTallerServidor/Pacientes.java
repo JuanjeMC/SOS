@@ -30,9 +30,8 @@ public class Pacientes extends HttpServlet {
             throws ServletException, IOException {
 
         String peticionSolicitada = request.getParameter("peticion");
-        String datos = request.getParameter("datos");  //Datos enviados en JSON
-
-
+        String datos;
+        //String datos = request.getParameter("datos");  //Datos enviados en JSON
 
         response.setContentType("text/html;charset=UTF-8");
 
@@ -40,15 +39,28 @@ public class Pacientes extends HttpServlet {
         BDAdaptador bd = new BDAdaptador();
 
         switch (peticionSolicitada) {
-            case "listaPacientes": resultado = bd.getPacientes(datos); //apellidos
+            case "listaPacientes":
+                datos = request.getParameter("apellidos");  //Datos enviados en JSON
+                resultado = bd.getPacientes(datos); //apellidos
                 break;
-            case "listaTratamientos": resultado = bd.getTratamientos(datos); //dniPaciente
+            case "listaTratamientos":
+                datos = request.getParameter("dniPaciente");
+                resultado = bd.getTratamientos(datos); //dniPaciente
                 break;
-            case "insertPaciente": resultado = bd.insertPaciente(datos); //JSON Paciente
+            case "insertPaciente":
+                datos = request.getParameter("jsonPaciente");
+                resultado = bd.insertPaciente(datos); //JSON Paciente
                 break;
-            case "insertTratamiento": resultado = bd.insertTratamiento(datos); // JSON Tratamiento
+            case "insertTratamiento":
+                datos = request.getParameter("jsonTratamiento");
+                resultado = bd.insertTratamiento(datos); // JSON Tratamiento
                 break;
-            case "cobraTratamiento": resultado = bd.cobraTratamiento(datos); //codTratamiento,codPaciente
+            case "cobraTratamiento":
+
+                String codTratamiento = request.getParameter("codTratamiento");
+                String codPaciente =  request.getParameter("codPaciente");
+                resultado = bd.cobraTratamiento(codTratamiento,codPaciente); //codTratamiento,codPaciente
+                break;
 
             default: resultado = "<p>Parámetro desconocido</p>";
         }
