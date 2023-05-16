@@ -32,10 +32,10 @@ public class Paciente implements Comparable<Paciente>{
         misTratamientos=new ArrayList<>();
 
     }
-    public boolean nuevoTratamiento(String codigo, String descripcion, String fecha, float precio) {
+    public boolean nuevoTratamiento(String codigo, String descripcion, String fecha, float precio, String dniPaciente) {
 
         if (this.buscaUnTratamiento(codigo) == null && precio >= 0f) {
-            misTratamientos.add(new Tratamiento(codigo,descripcion,fecha,precio));
+            misTratamientos.add(new Tratamiento(codigo,descripcion,fecha,precio,dniPaciente));
             return true;
         }
         return false;
