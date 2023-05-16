@@ -1,10 +1,10 @@
-package com.politecnicomalaga.clinicadentista;
+package com.politecnicomalaga.TrabajoTallerServidor;
 
 import java.util.ArrayList;
 
 
 public class Clinica {
-	public enum AtributosClinica {NOMBRE,DESCRIPCION,TELEFONO,EMAIL,CIF};
+	public enum AtributosClinica {NOMBRE,DIRECCION,TELEFONO,EMAIL,CIF};
 
 	//Estados
 	protected String sNombre;
