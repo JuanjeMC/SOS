@@ -110,12 +110,12 @@ public class BDAdaptador {
 
     //Método de inserción en la tabla de proveedores de un nuevo valor.
     //Cambiar por insertar Paciente.
-    public String insertPaciente(String json) {
+    public String insertPaciente(String jsonPaciente) {
         String resultado = "<p>Error al insertar</p>";
         String dni, nombrePaciente, apellidos, fNac, telefono, email;
         Connection connection = null;
 
-        Paciente paciente = (Paciente) new Gson().fromJson(json, Paciente.class);
+        Paciente paciente = (Paciente) new Gson().fromJson(jsonPaciente, Paciente.class);
 
         PreparedStatement ps = null;
 
