@@ -39,13 +39,13 @@ public class Proveedores extends HttpServlet {
         String resultado = "";
         BDAdaptador bd = new BDAdaptador();
         
-        switch (peticionSolicitada) {
+        /*switch (peticionSolicitada) {
             case "todos": resultado = bd.getProveedores();
                  break;
             case "insertar": resultado = bd.insertProveedor(datos);
                  break;
             default: resultado = "<p>Parámetro desconocido</p>";
-        }
+        }*/
         
         try ( PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
