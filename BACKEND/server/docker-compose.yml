@@ -14,7 +14,7 @@ services:
     image: mysql:latest
     restart: always
     environment:
-      MYSQL_DATABASE: taller_db
+      MYSQL_DATABASE: clinica_db
       MYSQL_ROOT_PASSWORD: secretone
       MYSQL_PORT: 3306
     volumes:
