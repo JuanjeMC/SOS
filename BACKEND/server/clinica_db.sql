@@ -26,6 +26,7 @@ SET time_zone = "+00:00";
 --
 -- Estructura de tabla para la tabla `Paciente`
 --
+use clinica_db;
 
 CREATE TABLE `paciente` (
   `dni` varchar(13) NOT NULL PRIMARY KEY,
@@ -49,7 +50,7 @@ CREATE TABLE `tratamiento` (
   `precio` float NOT NULL,
   `cobrado` boolean NOT NULL,
   `dniPaciente` varchar(13) NOT NULL,
-  FOREIGN KEY (`dniPaciente`) REFERENCES `Paciente`(`dni`)
+  FOREIGN KEY (`dniPaciente`) REFERENCES `paciente`(`dni`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 
@@ -59,11 +60,11 @@ CREATE TABLE `tratamiento` (
 --
 
 -- INSERT INTO Paciente
-INSERT INTO Paciente (nombrePaciente, apellidos, dni, fnac, telefono, email)
+INSERT INTO paciente (nombrePaciente, apellidos, dni, fnac, telefono, email)
 VALUES ('SOS', 'Proyecto', '12345678A', '2023-05-14', '123456789', 'sos@proyecto.com');
 
 -- INSERT INTO Tratamiento
-INSERT INTO Tratamiento (codigo, descripcion, fecha, precio, cobrado, dniPaciente)
+INSERT INTO tratamiento (codigo, descripcion, fecha, precio, cobrado, dniPaciente)
 VALUES ('T01', 'Altas dosis de cafeína', '2023-05-14', 100.00, 1, '12345678A');
 
 COMMIT;
