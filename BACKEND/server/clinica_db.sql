@@ -26,7 +26,7 @@ SET time_zone = "+00:00";
 --
 -- Estructura de tabla para la tabla `Paciente`
 --
-
+USE clinica_db;
 CREATE TABLE `paciente` (
   `dni` varchar(13) NOT NULL PRIMARY KEY,
   `nombrePaciente` varchar(50) NOT NULL,
