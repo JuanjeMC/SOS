@@ -77,7 +77,7 @@ public class Clinica {
 	}
 	
 	//CRUD de Pacientes
-	public boolean nuevoPaciente(String nombre, String apellidos, String dni, String fNac, String email, String tfno) {
+	/*public boolean nuevoPaciente(String nombre, String apellidos, String dni, String fNac, String email, String tfno) {
 
 		if (this.buscaPacientes(dni, Paciente.AtributosPaciente.DNI) == null) {
 			misPacientes.add(new Paciente(nombre, apellidos, tfno, email, dni, fNac));
@@ -139,7 +139,7 @@ public class Clinica {
 			return true;
 		}
 		return false;
-	}
+	}*/
 	
 	
 
