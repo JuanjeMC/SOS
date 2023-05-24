@@ -9,7 +9,7 @@
         <url-pattern>/Pacientes</url-pattern>
     </servlet-mapping>
     <session-config>
-        <session-timeout>
+        <session-timeout> 
             30
         </session-timeout>
     </session-config>
