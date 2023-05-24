@@ -27,21 +27,27 @@ public class BDAdaptador {
 
     private Connection initDatabase() {
         Connection con = null;
-        // Initialize all the information regarding
-        // Database Connection
-        String dbDriver = "com.mysql.jdbc.Driver";
-        String dbURL = "jdbc:mysql://localhost:3306/";
-        // Database name to access
-        String dbName = "clinica_db";
-        String dbUsername = "Medico";
-        String dbPassword = "1234";
+        try {            
+            // Initialize all the information regarding
+            // Database Connection
+            String dbDriver = "com.mysql.jdbc.Driver";
+            String dbURL = "jdbc:mysql://bbdd:3306/";
+            // Database name to access
+            String dbName = "clinica_db";
+            String dbUsername = "Medico";
+            String dbPassword = "1234";
 
-        try {
-            Class.forName(dbDriver);
+            try {
+                Class.forName(dbDriver);                
+            } catch (Exception e) {
+                sLastError = sLastError + "<p>Error dbDriver a la BBDD: " + e.getMessage() + "</p>";
+                e.printStackTrace();
+            }
             con = DriverManager.getConnection(dbURL + dbName, dbUsername, dbPassword);
-        } catch (Exception e) {
-            sLastError = sLastError + "<p>Error conectando a la BBDD: " + e.getMessage() + "</p>";
-            e.printStackTrace();
+            
+        } catch (Exception ex) {
+            sLastError = sLastError + "<p>Error conectando a la BBDD: " + ex.getMessage() + "</p>";
+            ex.printStackTrace();
         }
         return con;
     }
@@ -68,7 +74,7 @@ public class BDAdaptador {
             while (rs.next()) //Mientras tengamos rows de salida...
             {
                 iRows++;
-                dni = (rs.getString("dni"));
+                dni = rs.getString("dni");
                 nombrePaciente = rs.getString("nombrePaciente");
                 apellidos = rs.getString("apellidos");
                 fNac = rs.getString("fnac");
