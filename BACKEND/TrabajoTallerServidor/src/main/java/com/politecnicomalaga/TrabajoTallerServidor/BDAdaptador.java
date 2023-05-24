@@ -31,7 +31,7 @@ public class BDAdaptador {
             // Initialize all the information regarding
             // Database Connection
             String dbDriver = "com.mysql.jdbc.Driver";
-            String dbURL = "jdbc:mysql://localhost:3306/";
+            String dbURL = "jdbc:mysql://bbdd:3306/";
             // Database name to access
             String dbName = "clinica_db";
             String dbUsername = "Medico";
