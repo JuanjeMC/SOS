@@ -38,6 +38,10 @@ con Tomcat.
 Se ha realizado el reparto de tareas.
 Comentamos dudas acerca del proyecto en general.
 
+17/05/23
+
+Servidor desplegado y clases creadas, deberían funcionar.
+
 ################################################################################
 
 PROBLEMAS ENCONTRADOS 
@@ -53,6 +57,8 @@ Se agrega el archivo manager.xml a la ruta "conf/Catalina/localhost",
 dentro de éste, se añaden las siguientes líneas: 
 
 - Falta el atributo sDniPaciente en Tratamiento.
+
+- No funciona la petición o se está realizando mal desde el navegador.
 
 <Context privileged="true" antiResourceLocking="false" docBase="${catalina.home}/webapps/manager">
     <Valve className="org.apache.catalina.valves.RemoteAddrValve" allow="^.*$" />
