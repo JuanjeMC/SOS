@@ -64,7 +64,7 @@ public class BDAdaptador {
             connection = this.initDatabase();
 
             //st = con.createStatement();
-            ps = connection.prepareStatement("select * from paciente where apellidos=?");
+            ps = connection.prepareStatement("select * from paciente where apellidos like '%?%'");
             ps.setString(1, apellidosPaciente);
 
             //ResultSet rs = st.executeQuery("select * from proveedores");
@@ -116,12 +116,13 @@ public class BDAdaptador {
 
     //Método de inserción en la tabla de proveedores de un nuevo valor.
     //Cambiar por insertar Paciente.
-    public String insertPaciente(String jsonPaciente) {
+    public String insertPaciente(String sCSV) {
         String resultado = "<p>Error al insertar</p>";
         String dni, nombrePaciente, apellidos, fNac, telefono, email;
         Connection connection = null;
 
-        Paciente paciente = (Paciente) new Gson().fromJson(jsonPaciente, Paciente.class);
+        Paciente paciente = new Paciente(sCSV);
+        //Paciente paciente = (Paciente) new Gson().fromJson(jsonPaciente, Paciente.class);
 
         PreparedStatement ps = null;
 
@@ -134,7 +135,7 @@ public class BDAdaptador {
             ps.setString(2, paciente.getsNombre());
             ps.setString(3, paciente.getsApellidos());
             ps.setString(4, paciente.getsFnac());
-            ps.setString(5, paciente.getsApellidos());
+            ps.setString(5, paciente.getsTelefono());
             ps.setString(6, paciente.getsEmail());
 
             if (ps.executeUpdate() != 0) {
@@ -302,7 +303,7 @@ public class BDAdaptador {
             ResultSet rs = ps.executeQuery();
 
             if (rs.next()) {
-                ps = con.prepareStatement("UPDATE tratamiento SET cobrado = ? WHERE codigo = ? AND pDNI = ?");
+                ps = con.prepareStatement("UPDATE tratamiento SET cobrado = ? WHERE codigo = ? AND dniPaciente = ?");
                 ps.setBoolean(1, true);
                 ps.setString(2, codTratamiento);
                 ps.setString(3, dniPaciente);

@@ -22,7 +22,7 @@ public class Paciente implements Comparable<Paciente>{
     ArrayList<Tratamiento> misTratamientos;
 
     //Comportamiento
-    public Paciente(String sNombre, String sApellidos, String sTelefono, String sEmail, String sDni, String sFnac) {
+    public Paciente(String sDni, String sNombre, String sApellidos, String sFnac, String sTelefono, String sEmail) {
         this.sNombre = sNombre;
         this.sApellidos = sApellidos;
         this.sTelefono = sTelefono;
@@ -99,22 +99,21 @@ public class Paciente implements Comparable<Paciente>{
     
     public Paciente(String sCSV) {
         String[] listaParametros = sCSV.split(";");
-        this.sNombre = listaParametros[0];
-        this.sApellidos = listaParametros[1];
-        this.sTelefono = listaParametros[2];
-        this.sEmail= listaParametros[3];
-        this.sDni= listaParametros[4];
-        this.sFnac= listaParametros[5];
-
+        this.sDni= listaParametros[0];
+        this.sNombre = listaParametros[1];
+        this.sApellidos = listaParametros[2];
+        this.sFnac= listaParametros[3];
+        this.sTelefono = listaParametros[4];
+        this.sEmail= listaParametros[5];
     }
     @Override
     public String toString() {
-        return sNombre + ';' +
-                sApellidos +  ';' +
+        return sDni + ';' +
+                sNombre +  ';' +
+                sApellidos + ';' +
+                sFnac + ';' +
                 sTelefono + ';' +
-                sEmail + ';' +
-                sDni + ';' +
-                sFnac + ';';
+                sEmail;
     }
     /*public String toJson(Paciente miPaciente){
         String json = Gson.toJson(miPaciente);
