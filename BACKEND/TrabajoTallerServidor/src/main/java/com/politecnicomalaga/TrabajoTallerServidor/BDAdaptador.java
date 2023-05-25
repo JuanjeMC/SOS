@@ -302,7 +302,7 @@ public class BDAdaptador {
             ResultSet rs = ps.executeQuery();
 
             if (rs.next()) {
-                ps = con.prepareStatement("UPDATE tratamientos SET cobrado = ? WHERE codigo = ? AND pDNI = ?");
+                ps = con.prepareStatement("UPDATE tratamiento SET cobrado = ? WHERE codigo = ? AND pDNI = ?");
                 ps.setBoolean(1, true);
                 ps.setString(2, codTratamiento);
                 ps.setString(3, dniPaciente);

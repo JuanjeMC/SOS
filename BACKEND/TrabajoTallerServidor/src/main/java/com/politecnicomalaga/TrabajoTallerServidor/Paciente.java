@@ -96,6 +96,7 @@ public class Paciente implements Comparable<Paciente>{
     public void setsEmail(String sEmail) { this.sEmail = sEmail; }
     public void setsDni(String sDni) { this.sDni = sDni; }
     public void setsFnac(String sFnac) { this.sFnac = sFnac; }
+    
     public Paciente(String sCSV) {
         String[] listaParametros = sCSV.split(";");
         this.sNombre = listaParametros[0];
