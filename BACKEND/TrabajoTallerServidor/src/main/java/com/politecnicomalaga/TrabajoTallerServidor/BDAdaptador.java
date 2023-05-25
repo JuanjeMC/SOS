@@ -64,7 +64,7 @@ public class BDAdaptador {
             connection = this.initDatabase();
 
             //st = con.createStatement();
-            ps = connection.prepareStatement("select * from paciente where apellidos like '%?%'");
+            ps = connection.prepareStatement("select * from paciente where apellidos=?");
             ps.setString(1, apellidosPaciente);
 
             //ResultSet rs = st.executeQuery("select * from proveedores");
@@ -139,9 +139,9 @@ public class BDAdaptador {
             ps.setString(6, paciente.getsEmail());
 
             if (ps.executeUpdate() != 0) {
-                resultado = "<p>Proveedor insertado correctamente</p>";
+                resultado = "<p>Paciente insertado correctamente</p>";
             } else {
-                resultado = "<p>Algo ha salido mal con la sentencia Insert Proveedores</p>";
+                resultado = "<p>Algo ha salido mal con la sentencia Insert Pacientes</p>";
             }
             //En este caso es una orden hacia la BBDD, y no tenemos
             //ResultSet para iterar, las cosas pueden ir bien, o mal, nada más
