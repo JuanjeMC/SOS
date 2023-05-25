@@ -134,7 +134,7 @@ public class BDAdaptador {
             ps.setString(2, paciente.getsNombre());
             ps.setString(3, paciente.getsApellidos());
             ps.setString(4, paciente.getsFnac());
-            ps.setString(5, paciente.getsApellidos());
+            ps.setString(5, paciente.getsTelefono());
             ps.setString(6, paciente.getsEmail());
 
             if (ps.executeUpdate() != 0) {
