@@ -233,26 +233,27 @@ public class BDAdaptador {
     }
 
     //insertTratamiento (jsonPaciente)
-    public String insertTratamiento(String jsonPaciente) {
+    public String insertTratamiento(String sCSV) {
         String resultado = "<p>Error al insertar</p>";
         String codigo, descripcion, fecha, precio;
         boolean cobrado;
 
         Connection con = null;
         PreparedStatement ps = null;
-        Tratamiento miTr = (Tratamiento) new Gson().fromJson(jsonPaciente, Tratamiento.class);
+        Tratamiento miTr = new Tratamiento(sCSV);
+        //Tratamiento miTr = (Tratamiento) new Gson().fromJson(jsonPaciente, Tratamiento.class);
 
         try {
             con = this.initDatabase();
 
             //st = con.createStatement();
             ps = con.prepareStatement("insert into tratamiento (codigo, descripcion, fecha, precio, cobrado, dniPaciente) values (?,?,?,?,?,?)");
-            ps.setString(1, miTr.sCodigo);
-            ps.setString(2, miTr.sDescripcion);
-            ps.setString(3, miTr.sFecha);
-            ps.setFloat(4, miTr.fPrecio);
-            ps.setBoolean(5, miTr.bCobrado);
-            ps.setString(6, miTr.sDniPaciente);
+            ps.setString(1, miTr.getsCodigo());
+            ps.setString(2, miTr.getsDescripcion());
+            ps.setString(3, miTr.getsFecha());
+            ps.setFloat(4, miTr.getfPrecio());
+            ps.setBoolean(5, miTr.estaCobrado());
+            ps.setString(6, miTr.getsDniPaciente());
 
             if (ps.executeUpdate() != 0) {
                 resultado = "<p>Proveedor insertado correctamente</p>";
