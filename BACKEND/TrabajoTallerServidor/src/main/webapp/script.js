@@ -51,7 +51,7 @@ function peticion(id){
     
         var sCSV = dni + ";" + nombre + ";" + apellidos + ";" + fecha + ";" + telefono + ";" + email;
 
-        window.location.href = "http://141.144.229.103:8080/TrabajoTallerServidor-0.1/Pacientes?peticion=insertPaciente&sCSVPaciente=" + sCSV;
+        window.location.href = "http://141.144.229.103:8080/HappyDent/Pacientes?peticion=insertPaciente&sCSVPaciente=" + sCSV;
         
     }
 
@@ -66,7 +66,7 @@ function peticion(id){
 
         var sCSV = codT + ";" + descripcionT + ";" + fechaT + ";" + precioT + ";" + cobrado + ";" + dniP;
 
-        window.location.href = "http://141.144.229.103:8080/TrabajoTallerServidor-0.1/Pacientes?peticion=insertTratamiento&sCSVTratamiento=" + sCSV;
+        window.location.href = "http://141.144.229.103:8080/HappyDent/Pacientes?peticion=insertTratamiento&sCSVTratamiento=" + sCSV;
 
 
     }
@@ -75,7 +75,7 @@ function peticion(id){
 
         var apellidos = document.getElementById("apellP").value;
 
-        window.location.href = "http://141.144.229.103:8080/TrabajoTallerServidor-0.1/Pacientes?peticion=listaPacientes&apellidos=" + apellidos;
+        window.location.href = "http://141.144.229.103:8080/HappyDent/Pacientes?peticion=listaPacientes&apellidos=" + apellidos;
 
 
 
@@ -86,7 +86,7 @@ function peticion(id){
 
         var dni = document.getElementById("dniPT").value;
 
-        window.location.href = "http://141.144.229.103:8080/TrabajoTallerServidor-0.1/Pacientes?peticion=listaTratamientos&dniPaciente=" + dni;
+        window.location.href = "http://141.144.229.103:8080/HappyDent/Pacientes?peticion=listaTratamientos&dniPaciente=" + dni;
         
 
     }
@@ -95,12 +95,12 @@ function peticion(id){
         var dni = document.getElementById("dniCT").value;
         var cod = document.getElementById("codCT").value;
 
-        window.location.href = "http://141.144.229.103:8080/TrabajoTallerServidor-0.1/Pacientes?peticion=cobraTratamiento&codTratamiento=" + cod + "&codPaciente=" + dni;
+        window.location.href = "http://141.144.229.103:8080/HappyDent/Pacientes?peticion=cobraTratamiento&codTratamiento=" + cod + "&codPaciente=" + dni;
     }
 
     if (id=="contenedor-imagen"){
 
-        window.location.href = "http://141.144.229.103:8080/TrabajoTallerServidor-0.1";
+        window.location.href = "http://141.144.229.103:8080/HappyDent";
 
     }
 

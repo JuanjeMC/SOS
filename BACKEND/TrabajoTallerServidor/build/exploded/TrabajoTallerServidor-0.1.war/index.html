@@ -22,6 +22,8 @@
             <option value="2">Insertar tratamiento</option>
             <option value="3">Listar paciente</option>
             <option value="4">Listar tratamientos</option>
+            <option value="5">Cobrar tratamiento</option>
+            
         </select>
     </form>
     <div id="insertP">
@@ -112,6 +114,24 @@
         </div>
         <div class="btn from-left" id="lt" onclick="peticion(this.id)"> Listar Tratamientos</div>
     </div>
+    <div id="cobT">
+        <div class="insert">
+            
+                <div>
+                    <input type="text" id="dniCT" name="dniCT" style="width: 20em;">
+                    <br>
+                    <label for="dniCT">DNI Paciente</label>
+                </div>
+                <div>
+                    <input type="text" id="codCT" name="codCT" style="width: 20em;">
+                <br>
+                <label for="codCT">Código Tratamiento</label>
+                </div>
+            
+        </div>
+        <div class="btn from-left" id="ct" onclick="peticion(this.id)"> Cobrar Tratamiento</div>
+    </div>
+
 </body>
 
 </html>
