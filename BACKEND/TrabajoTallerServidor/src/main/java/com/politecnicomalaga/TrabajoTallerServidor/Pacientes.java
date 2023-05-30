@@ -48,11 +48,11 @@ public class Pacientes extends HttpServlet {
                 resultado = bd.getTratamientos(datos); //dniPaciente
                 break;
             case "insertPaciente":
-                datos = request.getParameter("jsonPaciente");
+                datos = request.getParameter("sCSVPaciente");
                 resultado = bd.insertPaciente(datos); //JSON Paciente
                 break;
             case "insertTratamiento":
-                datos = request.getParameter("jsonTratamiento");
+                datos = request.getParameter("sCSVTratamiento");
                 resultado = bd.insertTratamiento(datos); // JSON Tratamiento
                 break;
             case "cobraTratamiento":

@@ -48,22 +48,15 @@ this.sDniPaciente = sDniPaciente;
 
 
 public Tratamiento(String sCSV) {
+
     String[] columnas = sCSV.split(";");
-
-    if (columnas[0].equals("Tratamiento")) {
-        this.sCodigo = columnas[1];
-        this.sDescripcion = columnas[2];
-        this.sFecha = columnas[3];
-        this.fPrecio = Float.valueOf(columnas[4]);
-        this.bCobrado = Boolean.valueOf(columnas[5]);
-    } else {
-    this.sCodigo = "";
-    this.sDescripcion = "";
-    this.sFecha = "";
-    this.fPrecio = 0f;
-
-    bCobrado = true;
-    }
+        this.sCodigo = columnas[0];
+        this.sDescripcion = columnas[1];
+        this.sFecha = columnas[2];
+        this.fPrecio = Float.valueOf(columnas[3]);
+        this.bCobrado = Boolean.valueOf(columnas[4]);
+        this.sDniPaciente = columnas[5];
+ 
 }
 
        
