@@ -4,24 +4,36 @@ function opcion(id){
         document.getElementById("insertT").style.display = "none";
         document.getElementById("listP").style.display = "none";
         document.getElementById("listT").style.display = "none";
+        document.getElementById("cobT").style.display = "none";
     }
     if( id == "2"){
         document.getElementById("insertP").style.display = "none";
         document.getElementById("insertT").style.display = "contents";
         document.getElementById("listP").style.display = "none";
         document.getElementById("listT").style.display = "none";
+        document.getElementById("cobT").style.display = "none";
     }
     if( id == "3"){
         document.getElementById("insertP").style.display = "none";
         document.getElementById("insertT").style.display = "none";
         document.getElementById("listP").style.display = "contents";
         document.getElementById("listT").style.display = "none";
+        document.getElementById("cobT").style.display = "none";
     }
     if( id == "4"){
         document.getElementById("insertP").style.display = "none";
         document.getElementById("insertT").style.display = "none";
         document.getElementById("listP").style.display = "none";
         document.getElementById("listT").style.display = "contents";
+        document.getElementById("cobT").style.display = "none";
+    }
+
+    if( id == "5"){
+        document.getElementById("insertP").style.display = "none";
+        document.getElementById("insertT").style.display = "none";
+        document.getElementById("listP").style.display = "none";
+        document.getElementById("listT").style.display = "none";
+        document.getElementById("cobT").style.display = "contents";
     }
 
 }
@@ -58,5 +70,41 @@ function peticion(id){
 
 
     }
+
+    if (id=="lp"){
+
+        var apellidos = document.getElementById("apellP").value;
+
+        window.location.href = "http://141.144.229.103:8080/TrabajoTallerServidor-0.1/Pacientes?peticion=listaPacientes&apellidos=" + apellidos;
+
+
+
+
+    }
+
+    if (id=="lt"){
+
+        var dni = document.getElementById("dniPT").value;
+
+        window.location.href = "http://141.144.229.103:8080/TrabajoTallerServidor-0.1/Pacientes?peticion=listaTratamientos&dniPaciente=" + dni;
+        
+
+    }
+
+    if (id=="ct"){
+        var dni = document.getElementById("dniCT").value;
+        var cod = document.getElementById("codCT").value;
+
+        window.location.href = "http://141.144.229.103:8080/TrabajoTallerServidor-0.1/Pacientes?peticion=cobraTratamiento&codTratamiento=" + cod + "&codPaciente=" + dni;
+    }
+
+    if (id=="contenedor-imagen"){
+
+        window.location.href = "http://141.144.229.103:8080/TrabajoTallerServidor-0.1";
+
+    }
+
+
 }
+
 

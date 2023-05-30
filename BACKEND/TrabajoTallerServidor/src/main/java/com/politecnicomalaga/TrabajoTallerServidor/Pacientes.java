@@ -82,7 +82,7 @@ public class Pacientes extends HttpServlet {
                     + "</head>\n"
                     + "\n"
                     + "<body>\n"
-                    + "    <div id=\"contenedor-imagen\">\n"
+                    + "    <div id=\"contenedor-imagen\" onclick=\"peticion(this.id)\">\n"
                     + "        <img src=\"logo.png\">\n"
                     + "    </div>\n"
                     +   resultado   

@@ -51,7 +51,7 @@ body {
     cursor: pointer;
 }
 
-#insertP, #insertT, #listP, #listT {
+#insertP, #insertT, #listP, #listT, #cobT {
     display: none;
 }
 
