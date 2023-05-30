@@ -58,27 +58,38 @@ public class Pacientes extends HttpServlet {
             case "cobraTratamiento":
 
                 String codTratamiento = request.getParameter("codTratamiento");
-                String codPaciente =  request.getParameter("codPaciente");
-                resultado = bd.cobraTratamiento(codTratamiento,codPaciente); //codTratamiento,codPaciente
+                String codPaciente = request.getParameter("codPaciente");
+                resultado = bd.cobraTratamiento(codTratamiento, codPaciente); //codTratamiento,codPaciente
                 break;
 
-            default: resultado = "<p>Parámetro desconocido</p>";
+            default:
+                resultado = "<p>Parámetro desconocido</p>";
         }
 
-        try ( PrintWriter out = response.getWriter()) {
+        try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
             //out.print(resultado);
-            out.println("<!DOCTYPE html>\n" +
-                    "<html>\n" +
-                    "<head>\n" +
-                    "<title>Proyecto Clinica</title>\n" +
-                    "<meta charset=\"UTF-8\">\n" +
-                    "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n" +
-                    "</head>\n" +
-                    "<body><p>Resultado:</p>\n" +
-                    resultado +
-                    "</body>\n" +
-                    "</html>");
+            out.println("<!DOCTYPE html>\n"
+                    + "<html lang=\"es-ES\">\n"
+                    + "\n"
+                    + "<head>\n"
+                    + "    <meta charset=\"UTF-8\">\n"
+                    + "    <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">\n"
+                    + "    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n"
+                    + "    <link rel=\"stylesheet\" href=\"style.css\">\n"
+                    + "    <script src=\"script.js\"></script>\n"
+                    + "    <title>HappyDent</title>\n"
+                    + "</head>\n"
+                    + "\n"
+                    + "<body>\n"
+                    + "    <div id=\"contenedor-imagen\">\n"
+                    + "        <img src=\"logo.png\">\n"
+                    + "    </div>\n"
+                    +   resultado   
+                    + "    \n"
+                    + "</body>\n"
+                    + "\n"
+                    + "</html>");
         }
     }
 
