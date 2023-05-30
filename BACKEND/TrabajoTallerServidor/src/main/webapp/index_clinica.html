@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es-ES">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+    <title>HappyDent</title>
+</head>
+
+<body>
+    <div id="contenedor-imagen">
+        <img src="logo.png">
+    </div>
+    <form id="form_opcion">
+        <label for="accion" id="titulo-opcion">¿Qué desea realizar?</label>
+        <select name="accion" id="campos-opcion" onchange="opcion(this.value)">
+            <option selected disabled hidden>Haga click para seleccionar una opción</option>
+            <option value="1">Insertar paciente</option>
+            <option value="2">Insertar tratamiento</option>
+            <option value="3">Listar paciente</option>
+            <option value="4">Listar tratamientos</option>
+        </select>
+    </form>
+    <div id="insertP">
+        <div class="insert">
+            <div>
+                <input type="text" id="dniP" name="dniP" style="width: 20em;">
+                <br>
+                <label for="dniP">DNI</label>
+                <br><br>
+                <input type="text" id="nombreP" name="nombreP" style="width: 20em;">
+                <br>
+                <label for="nombre">Nombre</label>
+                <br><br>
+                <input type="text" id="apellidosP" name="apellidosP" style="width: 20em;">
+                <br>
+                <label for="apellidosP">Apellidos</label>
+            </div>
+            <div>
+                <input type="text" id="fNac" name="fNac" style="width: 20em;">
+                <br>
+                <label for="fNac">Fecha de nacimiento</label>
+                <br><br>
+                <input type="text" id="telefonoP" name="telefonoP" style="width: 20em;">
+                <br>
+                <label for="telefonoP">Teléfono</label>
+                <br><br>
+                <input type="text" id="emailP" name="emailP" style="width: 20em;">
+                <br>
+                <label for="emailP">Correo electrónico</label>
+            </div>
+        </div>
+        <div class="btn from-left"> Insertar Paciente</div>
+    </div>
+    <div id="insertT">
+        <div class="insert">
+            <div>
+                <input type="text" id="codT" name="codT" style="width: 20em;">
+                <br>
+                <label for="codT">Código Tratamiento</label>
+                <br><br>
+                <input type="text" id="descripcionT" name="descripcionT" style="width: 20em;">
+                <br>
+                <label for="descripcionT">Descripción</label>
+                <br><br>
+                <input type="text" id="fechaT" name="fechaT" style="width: 20em;">
+                <br>
+                <label for="fechaT">Fecha Tratamiento</label>
+            </div>
+            <div>
+                <input type="text" id="precioT" name="precioT" style="width: 20em;">
+                <br>
+                <label for="precioT">Precio</label>
+                <br><br>
+                <input type="text" id="dniT" name="dniT" style="width: 20em;">
+                <br>
+                <label for="dniT">DNI Paciente</label>
+                <br><br>
+                <select name="cobrado" id="cobrado" class="selector">
+                    <option selected disabled hidden>Haga click para seleccionar una opción</option>
+                    <option value="1">true</option>
+                    <option value="2">false</option>
+                </select>
+                <br>
+                <label for="cobrado">Cobrado</label>
+            </div>
+        </div>
+        <div class="btn from-left"> Insertar Tratamiento</div>
+    </div>
+    <div id="listP">
+        <div style="width: 20em; margin: 0 auto; display: flex; justify-content: center;">
+            <div>
+                <input type="text" id="apellP" name="apellP" style="width: 20em;">
+                <br>
+                <label for="apellP">Apellidos Paciente</label>
+            </div>
+        </div>
+        <div class="btn from-left"> Listar Paciente</div>
+    </div>
+    <div id="listT">
+        <div class="insert">
+            <div style="width: 20em; margin: 0 auto; display: flex; justify-content: center;">
+                <div>
+                    <input type="text" id="dniPT" name="dniPT" style="width: 20em;">
+                    <br>
+                    <label for="dniPT">DNI Paciente</label>
+                </div>
+            </div>
+        </div>
+        <div class="btn from-left"> Listar Tratamientos</div>
+    </div>
+</body>
+
+</html>
