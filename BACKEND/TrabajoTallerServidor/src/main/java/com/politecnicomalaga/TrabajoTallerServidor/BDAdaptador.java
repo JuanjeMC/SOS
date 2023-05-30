@@ -256,9 +256,9 @@ public class BDAdaptador {
             ps.setString(6, miTr.getsDniPaciente());
 
             if (ps.executeUpdate() != 0) {
-                resultado = "<p>Proveedor insertado correctamente</p>";
+                resultado = "<p>Tratamiento insertado correctamente</p>";
             } else {
-                resultado = "<p>Algo ha salido mal con la sentencia Insert Proveedores</p>";
+                resultado = "<p>Algo ha salido mal con la sentencia Insert Tratamiento</p>";
             }
             //En este caso es una orden hacia la BBDD, y no tenemos
             //ResultSet para iterar, las cosas pueden ir bien, o mal, nada más
